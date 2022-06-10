@@ -1,0 +1,4 @@
+export const BASKET_IN_OUT = "BUY/BASKET_OUT"
+
+export const SHOW_LOADER = "BUY/SHOW_LOADER"
+export const HIDE_LOADER = "BUY/HIDE_LOADER"

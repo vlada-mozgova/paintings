@@ -1,0 +1,135 @@
+$textColor: rgb(52, 48, 48);
+$mobile-max-breakpoint: 767px;
+
+@mixin flex-row-content() {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+@mixin flex-column-content() {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+@mixin price-font {
+  width: 100px;
+  font-weight: 700;
+  font-size: 14px;
+  color: $textColor;
+}
+@mixin post-settings() {
+  position: relative;
+  margin-top: 2.55%;
+  margin-right: 1.9%;
+  border: 1px solid rgb(225, 225, 225);
+  padding-bottom: 0.19%;
+}
+
+.body {
+  @include flex-column-content;
+  padding-left: 19.75%;
+  padding-top: 2.3%;
+}
+.title {
+  font-weight: 700;
+  font-size: 21px;
+  color: $textColor;
+}
+.body-posts {
+  @include flex-row-content;
+}
+.post {
+  @include post-settings();
+}
+.post.sold-border {
+  border: 1px solid rgba(225, 225, 225, 0.5);
+}
+.sold {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(246, 243, 243, 0.5);
+  z-index: 999;
+  padding-bottom: 0.19%;
+}
+.pictures {
+  width: 203.8px;
+  height: 116px;
+}
+.pictures-title {
+  padding-top: 4.5%;
+  padding-left: 8%;
+  align-self: center;
+  font-weight: 400;
+  font-size: 16.3px;
+  color: $textColor;
+}
+.buy-box {
+  @include flex-row-content();
+}
+.price-box {
+  @include flex-column-content;
+  width: 50%;
+}
+.button-box {
+  width: 50%;
+}
+.salePrice {
+  @include price-font();
+  margin-top: -14%;
+  padding-left: 16%;
+}
+.price {
+  width: 100px;
+  padding-top: 3.5%;
+  padding-left: 16%;
+  font-weight: 300;
+  font-size: 12px;
+  text-decoration-line: line-through;
+  color: rgb(160, 160, 160);
+}
+.price-noSale {
+  @include price-font();
+  padding-top: 11.5%;
+  padding-left: 15.5%;
+}
+.price-sold {
+  @include price-font();
+  padding-top: 5.5%;
+  padding-left: 7.7%;
+  width: 200px;
+}
+
+@media (max-width: $mobile-max-breakpoint) {
+  .body {
+    padding: 0 5%;
+    padding-bottom: 111px;
+    padding-top: 6%;
+  }
+  .body-posts {
+    @include flex-column-content();
+  }
+  .post {
+    margin-right: 0;
+  }
+  .pictures {
+    width: 100%;
+    height: 60%;
+  }
+  .price-noSale {
+    padding-top: 4.5%;
+    padding-left: 17%;
+    font-size: 15px;
+  }
+  .price {
+    padding-left: 18%;
+    padding-top: 1.5%;
+    font-weight: 300;
+    font-size: 13px;
+  }
+  .salePrice {
+    margin-top: -10.5%;
+    padding-left: 17%;
+    font-size: 15px;
+  }
+}
